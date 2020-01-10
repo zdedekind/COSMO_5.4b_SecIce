@@ -1,0 +1,61 @@
+!+ Contains definition of statement functions for common use
+!------------------------------------------------------------------------------
+!
+! Desctiption:
+!  Although statement functions are an obsolete feature in the new Fortran
+!  standard, they are commonly used in the model, because the vectorization
+!  is better than with usual functions (if no inlining can be used).
+!  As long as this is the case, we will use statement functions. 
+!  This include-file defines several statement functions that are used 
+!  throughout the model, but are declared separately in every module / 
+!  component. 
+!
+!  In a second step, all statement functions have to be replaced by these
+!  definitions.
+!
+!------------------------------------------------------------------------------
+!
+! Current Code Owner: DWD, Matthias Raschendorfer
+!  phone:  +49  69  8062 2708
+!  fax:    +49  69  8062 3721
+!  email:  matthias.raschendorfer@dwd.de
+!
+! History:
+! Version    Date       Name
+! ---------- ---------- ----
+! V3_23        2007/03/30 Matthias Raschendorfer
+!  Initial release
+! V4_13        2010/05/11 Michael Gertz
+!  Adaptions to SVN
+! V5_1         2014-11-28 Oliver Fuhrer
+!  Replaced ireals by wp (working precision) (OF)
+!
+! Code Description:
+! Language: Fortran 90
+! Software Standards: "European Standards for Writing and
+! Documenting Exchangeable Fortran 90 Code".
+!==============================================================================
+
+!     Declaration of statement functions:
+
+      REAL (KIND=wp)     :: &
+
+           zexner, zpsat_w ,zqvap, zdqsdt, & !statement functions and
+           zpres, ztemp, zpvap, zqsat        !their formal arguments
+
+!     Definition of statement functions:
+
+!     Exner-factor:
+      zexner(zpres)=(1.0E-5_wp*zpres)**rdocp
+
+!     saturation vapour pressure over water:
+      zpsat_w(ztemp)=b1*exp(b2w*(ztemp-b3)/(ztemp-b4w))
+
+!     specific humidity:
+      zqvap(zpvap,zpres)=rdv*zpvap/(zpres-o_m_rdv*zpvap)
+
+!     Derivation of zqsat with respect to temperature:
+      zdqsdt(ztemp,zqsat)=b234w*(1.0_wp+rvd_m_o*zqsat) &
+                            *zqsat/(ztemp-b4w)**2
+
+!=======================================================================
