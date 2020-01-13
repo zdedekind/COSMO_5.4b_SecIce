@@ -56,13 +56,13 @@ PUBLIC :: info_readnl, info_define, info_print, info_getvalue
 !
 ! Following declarations have to be defined just after checkout from the version control system:
 CHARACTER (LEN=*), PARAMETER :: INFO_LibraryName = 'cosmo5.4b.1'
-CHARACTER (LEN=*), PARAMETER :: INFO_RevisionTag = '(missing)'
-CHARACTER (LEN=*), PARAMETER :: INFO_CheckinDate = '(missing)'
-CHARACTER (LEN=*), PARAMETER :: INFO_RevisionNumber = '(missing)'
+CHARACTER (LEN=*), PARAMETER :: INFO_RevisionTag = ''
+CHARACTER (LEN=*), PARAMETER :: INFO_CheckinDate = '2020-01-10 14:25:28 +0100'
+CHARACTER (LEN=*), PARAMETER :: INFO_RevisionNumber = 'f0698ce @ (HEAD -> master)'
 CHARACTER (LEN=*), PARAMETER :: INFO_CheckoutDate = '(missing)'
 CHARACTER (LEN=*), PARAMETER :: INFO_ProductionDate = '(missing)'
 ! Following declarations have to be defined just before compiling:
-CHARACTER (LEN=*), PARAMETER :: INFO_CodeIsModified = 'unknown'
+CHARACTER (LEN=*), PARAMETER :: INFO_CodeIsModified = 'true'
 CHARACTER (LEN=*), PARAMETER :: INFO_CompilerCall = 'ftn -D__PGI_FORTRAN_ -Mpreprocess -DNUDGING -DGRIBDWD -DGRIBAPI ' // &
     '-DNETCDF -DTWOMOM_SB -DFOR_LM -Kieee -Mfree -Mdclchk -DHAS_IOMSG -D__COSMO__ -O3 -Mvect=sse -Mlre ' // &
     '-Mvect=noassoc -Mipa=fast,inline -Mnofma'
@@ -79,7 +79,7 @@ CHARACTER (LEN=*), PARAMETER :: INFO_LinkOptions = 'ftn -D__PGI_FORTRAN_ = -L/pr
     '-L/project/c14/install/daint/libgrib_api/v1.20.0.3/pgi/lib -lgrib_api_f90 -lgrib_api ' // &
     '-L/project/c14/install/daint/libjasper/lib -ljasper'
 CHARACTER (LEN=*), PARAMETER :: INFO_CompiledBy = 'dedekind'
-CHARACTER (LEN=*), PARAMETER :: INFO_CompileTime = 'Mon Dec 30 19:53:07 CET 2019'
+CHARACTER (LEN=*), PARAMETER :: INFO_CompileTime = 'Mon Jan 13 13:45:11 CET 2020'
 CHARACTER (LEN=*), PARAMETER :: INFO_CompileMachine = 'daint'
 CHARACTER (LEN=*), PARAMETER :: INFO_GribApiVersion  = ''
 !

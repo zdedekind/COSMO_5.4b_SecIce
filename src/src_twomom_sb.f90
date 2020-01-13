@@ -340,8 +340,8 @@ END TYPE PARTICLE
 !          (4)-snow upon graupel; (5)-frozen droplet shattering
 ! wFuncCode
   LOGICAL, PARAMETER          :: ice_multiplication = .TRUE.  !..does secondary nucleation occur
-  CHARACTER(8), PARAMETER     :: rim_typ   = '11101110'       !..rime splintering occurs between which hydrometeors
-  CHARACTER(5), PARAMETER     :: mult_typ  = '01011'          !..break up upon collision between which hydrometeors
+  CHARACTER(8), PARAMETER     :: rim_typ   = '00000000'       !..rime splintering occurs between which hydrometeors
+  CHARACTER(5), PARAMETER     :: mult_typ  = '01000'          !..break up upon collision between which hydrometeors
   INTEGER, PARAMETER          :: wFuncCode = 0                !..rime splintering temperature weighting
   DOUBLE PRECISION, PARAMETER :: sigma_DS  = 5d0             !..Standardabweichung [K]
   DOUBLE PRECISION, PARAMETER :: pmax_DS   = 0.1d0            !..Maximum (Haeufigkeit)
