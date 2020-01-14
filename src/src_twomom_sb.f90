@@ -10011,8 +10011,10 @@ END FUNCTION weighting
            IMPLICIT NONE
            DOUBLE PRECISION, INTENT(in) :: T
 
+         IF ( T >= T_min_BR ) THEN
            N_eject = F_BR * (T - T_min_BR)**(1.2d0)
            N_eject = N_eject * EXP(-(T - T_min_BR) / gamma_BR)
+         ENDIF
 
         END FUNCTION N_eject
 ! << SS_20170726, sylvia
