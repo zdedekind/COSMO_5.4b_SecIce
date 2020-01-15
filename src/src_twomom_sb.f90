@@ -341,7 +341,7 @@ END TYPE PARTICLE
 ! wFuncCode
   LOGICAL, PARAMETER          :: ice_multiplication = .TRUE.  !..does secondary nucleation occur
   CHARACTER(8), PARAMETER     :: rim_typ   = '00000000'       !..rime splintering occurs between which hydrometeors
-  CHARACTER(5), PARAMETER     :: mult_typ  = '01000'          !..break up upon collision between which hydrometeors
+  CHARACTER(5), PARAMETER     :: mult_typ  = '01010'          !..break up upon collision between which hydrometeors
   INTEGER, PARAMETER          :: wFuncCode = 0                !..rime splintering temperature weighting
   DOUBLE PRECISION, PARAMETER :: sigma_DS  = 5d0             !..Standardabweichung [K]
   DOUBLE PRECISION, PARAMETER :: pmax_DS   = 0.1d0            !..Maximum (Haeufigkeit)
@@ -14691,6 +14691,7 @@ icenuc_nenes = .TRUE.
         !CALL saturation_adjust_h2o ()
       ENDDO
 
+
       if (isdebug) write (*,*) 'CLOUDS: ice_selfcollection'
       CALL ice_selfcollection ()
 
@@ -14711,7 +14712,7 @@ icenuc_nenes = .TRUE.
 
       IF (ice_typ > 1) THEN
 
-        if (isdebug) write (*,*) 'CLOUDS: graupel_hail_conversion_wetgrowth'
+!        if (isdebug) write (*,*) 'CLOUDS: graupel_hail_conversion_wetgrowth'
 ! UB_20090227>> use of lookup tables for the inc. gamma-fct. 
 !        CALL graupel_hail_conv_wet ()
         CALL graupel_hail_conv_wet_gamlook ()
@@ -17983,6 +17984,17 @@ END IF
     END IF
 #endif
     ! ub<<
+
+!ZD >> 15 Jan 2020
+     IF (lcmprates) THEN
+       cmp_dep_qi_d = 0
+       cmp_dep_qs_d = 0
+       cmp_dep_qg_d = 0
+       cmp_sub_qi_d = 0
+       cmp_sub_qs_d = 0
+       cmp_sub_qg_d = 0
+     END IF
+!ZD <<
 
     DO k = 1, loc_iz
       DO j = 1, loc_iy
