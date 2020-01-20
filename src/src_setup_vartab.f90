@@ -1297,10 +1297,10 @@ IF (lcmprates) THEN
 !      'kg m-3'  ,  'activation of qc',                           'activation of cloud droplets',                          ' ')
 !var(1,  51,12)= ar_des('QNC_ACT     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_act_qnc,  dum3,    dum2, 1,&
 !      'm-3'  ,  'activation of qnc',                           'activation of cloud droplets',                          ' ')
-!var(1,  52,12)= ar_des('QI_IMFR     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_fr_qi  ,  dum3,    dum2, 1,&
-!      'kg m-3'  ,  'immersion freezing',                           'immersion freezing of ice particles',      ' ')
-!var(1,  53,12)= ar_des('QNI_IMFR     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,   cmp_fr_qni,  dum3,    dum2, 1,&
-!      'm-3'  ,  'imm fr of qni',                           'immersion freezing of ice numer',                          ' ')
+var(1,  52,12)= ar_des('QI_IMFR     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_fr_qi  ,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'immersion freezing',                           'immersion freezing of ice particles',      ' ')
+var(1,  53,12)= ar_des('QNI_IMFR     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,   cmp_fr_qni,  dum3,    dum2, 1,&
+      'm-3'  ,  'imm fr of qni',                           'immersion freezing of ice numer',                          ' ')
 !var(1,  54,12)= ar_des('QI_NUC     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,     cmp_nuc_qi ,  dum3,    dum2, 1,&
 !      'kg m-3'  ,  'nucleation of qi',                           'nucleation of cloud ice mass',                          ' ')
 !var(1,  55,12)= ar_des('QNI_NUC     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_nuc_qni,  dum3,    dum2, 1,&
@@ -1351,10 +1351,10 @@ var(1,  73,12)= ar_des('CONV_QNS_QNG  ',     110,     0,     0,   1.0    , 0.0, 
 !      'kg m-3'  ,  'hom freezing of sol.',                           'Homogenous freezing of solution droplets',    ' ')
 !var(1,  78,12)= ar_des('QNI_HOM_SOL  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_hom_sol_qni,  dum3,    dum2, 1,&
 !      'm-3'  ,  'hom freezing of sol.',                           'Homogenous freezing of solution droplets',    ' ')
-!var(1,  79,12)= ar_des('QI_HOM  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_hom_qi,  dum3,    dum2, 1,&
-!      'kg m-3'  ,  'hom freezing of water.',                           'Homogenous freezing of cloud droplets',    ' ')
-!var(1,  80,12)= ar_des('QNI_HOM  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_hom_qni,  dum3,    dum2, 1,&
-!      'm-3'  ,  'hom freezing of water.',                           'Homogenous freezing of cloud droplets',    ' ')
+var(1,  79,12)= ar_des('QI_HOM  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_hom_qi,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'hom freezing of water.',                           'Homogenous freezing of cloud droplets',    ' ')
+var(1,  80,12)= ar_des('QNI_HOM  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_hom_qni,  dum3,    dum2, 1,&
+      'm-3'  ,  'hom freezing of water.',                           'Homogenous freezing of cloud droplets',    ' ')
 var(1,  81,12)= ar_des('QS_DEP     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,     cmp_dep_qs,   dum3,    dum2, 1,&
       'kg m-3'  ,  'depositional growth of qs',                           'depositional growth of snow',                          ' ')
 var(1,  82,12)= ar_des('QI_SUB     ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,     cmp_sub_qi,   dum3,    dum2, 1,&
