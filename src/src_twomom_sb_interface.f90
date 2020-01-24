@@ -2801,6 +2801,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         qrdummy(:,:,:) = qr(:,:,:)
+        qnrdummy(:,:,:) = qnr(:,:,:) !ZD >>
       END IF
 !OCH <<
 
@@ -2844,6 +2845,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         cmp_sedi_qr(:,:,:) = cmp_sedi_qr + (qrdummy - qr(:,:,:))
+        cmp_sedi_qr(:,:,:) = cmp_sedi_qnr + (qnrdummy - qnr(:,:,:)) !ZD >>
       END IF
 !OCH <<
 
@@ -2861,6 +2863,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         qgdummy(:,:,:) = qg(:,:,:)
+        qngdummy(:,:,:) = qng(:,:,:) !ZD >>
       END IF
 !OCH <<
 
@@ -2878,7 +2881,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         cmp_sedi_qg(:,:,:) = cmp_sedi_qg + (qgdummy - qg(:,:,:))
-        cmp_sedi_qng(:,:,:) = cmp_sedi_qng + (qgdummy - qng(:,:,:))
+        cmp_sedi_qng(:,:,:) = cmp_sedi_qng + (qngdummy - qng(:,:,:)) !ZD >>
       END IF
 !OCH <<
     ENDIF
@@ -2921,6 +2924,7 @@ cv_i     =  2060.0_wp
 !OCH>>
       IF (lcmprates) THEN
         qsdummy(:,:,:) = qs(:,:,:)
+        qnsdummy(:,:,:) = qns(:,:,:) !ZD >>
       END IF
 !OCH <<
       DO n=1,nt_sedi  ! time loop with smaller timestep for snow
@@ -2937,7 +2941,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         cmp_sedi_qs(:,:,:) = cmp_sedi_qs + (qsdummy - qs(:,:,:))
-        cmp_sedi_qns(:,:,:) = cmp_sedi_qns + (qsdummy - qns(:,:,:))
+        cmp_sedi_qns(:,:,:) = cmp_sedi_qns + (qnsdummy - qns(:,:,:)) !ZD >>
       END IF
 !OCH <<
     ENDIF
@@ -2953,6 +2957,7 @@ cv_i     =  2060.0_wp
 !OCH>>
       IF (lcmprates) THEN
         qidummy(:,:,:) = qi(:,:,:)
+        qnidummy(:,:,:) = qni(:,:,:) !ZD >>
       END IF
 !OCH <<
 
@@ -2970,7 +2975,7 @@ cv_i     =  2060.0_wp
 !OCH >>
       IF (lcmprates) THEN
         cmp_sedi_qi(:,:,:) = cmp_sedi_qi + (qidummy - qi(:,:,:))
-        cmp_sedi_qni(:,:,:) = cmp_sedi_qni + (qidummy - qni(:,:,:))
+        cmp_sedi_qni(:,:,:) = cmp_sedi_qni + (qnidummy - qni(:,:,:)) !ZD >>
       END IF
 !OCH <<
 
