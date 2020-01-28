@@ -856,7 +856,11 @@ USE data_fields,   ONLY: &
     Ni_sec_dr_spl   , &
     Ni_sec_gr_br_ice , &
     Ni_sec_gr_br_snow, &
-    Ni_pri_homhet
+    Ni_pri_homhet, &
+    cmp_pf_qi, &
+    cmp_pf_qs, &
+    cmp_pf_qg, &
+    cmp_pf_qh
 ! ZD_20190819
 
 !------------------------------------------------------------------------------
@@ -1654,6 +1658,11 @@ endif
   ALLOCATE(Ni_sec_gr_br_ice(ie,je,ke ), STAT=izl );    Ni_sec_gr_br_ice = 0.0; ist = ist + izl
   ALLOCATE(Ni_sec_gr_br_snow(ie,je,ke ), STAT=izl );   Ni_sec_gr_br_snow = 0.0; ist = ist + izl
   ALLOCATE(Ni_pri_homhet(ie,je,ke ), STAT=izl );   Ni_pri_homhet = 0.0; ist = ist + izl
+  ALLOCATE(cmp_pf_qi(ie,je,ke ), STAT=izl );      cmp_pf_qi = 0.0; ist = ist + izl
+  ALLOCATE(cmp_pf_qs(ie,je,ke ), STAT=izl );      cmp_pf_qs = 0.0; ist = ist + izl
+  ALLOCATE(cmp_pf_qg(ie,je,ke ), STAT=izl );      cmp_pf_qg = 0.0; ist = ist + izl
+  ALLOCATE(cmp_pf_qh(ie,je,ke ), STAT=izl );      cmp_pf_qh = 0.0; ist = ist + izl
+
 !<<ZD_20190819
 
   IF (izdebug > 10) THEN

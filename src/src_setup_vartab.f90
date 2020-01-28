@@ -550,7 +550,11 @@ USE data_fields,        ONLY:                              &
     Ni_sec_dr_spl  , &
     Ni_sec_gr_br_ice, &
     Ni_sec_gr_br_snow, &
-    Ni_pri_homhet
+    Ni_pri_homhet, &
+    cmp_pf_qi, &
+    cmp_pf_qs, &
+    cmp_pf_qg, &
+    cmp_pf_qh
 !<< ZD_20190819
 
 !------------------------------------------------------------------------------
@@ -1432,6 +1436,14 @@ var(1,  112,12)= ar_des('MULT_HM ',     110,     0,     0,   1.0    , 0.0,   0, 
       'm-3'  ,  'Ice generated due to HM',                            'Ice increase due to Hallett-Mossop',    ' ')
 var(1,  113,12)= ar_des('PRI_NUC ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    Ni_pri_homhet,  dum3,    dum2, 1,&
       'm-3'  ,  'Ice generated due to Pri Nuc',                            'Ice increase due primary nucleation',    ' ')
+var(1,  118,12)= ar_des('PF_QI  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_pf_qi,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'ice sedimentation flux',                           'ice sedimentation flux',    ' ')
+var(1,  119,12)= ar_des('PF_QS  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_pf_qs,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'snow sedimentation flux',                           'snow sedimentation flux',    ' ')
+var(1,  120,12)= ar_des('PF_QG  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_pf_qg,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'graupel sedimentation flux',                           'graupel sedimentation flux',    ' ')
+var(1,  121,12)= ar_des('PF_QH  ',     110,     0,     0,   1.0    , 0.0,   0,   3, ke, dum4,  dum4,    cmp_pf_qh,  dum3,    dum2, 1,&
+      'kg m-3'  ,  'hail sedimentation flux',                           'hail sedimentation flux',    ' ')
 !--------------------------------------------------------------------------------------------------------------------------
 !--------------------------------------------------------------------------------------------------------------------------
 !--------------------------------------------------------------------------------------------------------------------------

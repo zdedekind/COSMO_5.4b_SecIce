@@ -238,14 +238,18 @@ MODULE src_twomom_sb_interface
     cmp_sedi_qi     , &
     cmp_sedi_qni    , &
     cmp_sedi_qr     , &
-!    cmp_sedi_qnr   !, &
+    cmp_sedi_qnr   , &
     cmp_cond_qc     , &
 !OCH <<
     Ni_sec_hm       , &
     Ni_sec_dr_spl   , &
     Ni_sec_gr_br_ice, &
     Ni_sec_gr_br_snow, &
-    Ni_pri_homhet
+    Ni_pri_homhet, &
+    cmp_pf_qi, &
+    cmp_pf_qs, &
+    cmp_pf_qg, &
+    cmp_pf_qh
 ! ZD_20190819
 
   USE data_parallel,      ONLY :  &
@@ -2594,7 +2598,12 @@ cv_i     =  2060.0_wp
       cmp_sedi_qi(:,:,:) = 0.
       cmp_sedi_qni(:,:,:) = 0.
       cmp_sedi_qr(:,:,:) = 0.
-!      cmp_sedi_qnr(:,:,:) = 0.
+      cmp_sedi_qnr(:,:,:) = 0.
+      cmp_pf_qi(:,:,:) = 0.
+      cmp_pf_qs(:,:,:) = 0.
+      cmp_pf_qg(:,:,:) = 0.
+      cmp_pf_qh(:,:,:) = 0.
+
      END IF
     endif
 
@@ -2882,6 +2891,7 @@ cv_i     =  2060.0_wp
       IF (lcmprates) THEN
         cmp_sedi_qg(:,:,:) = cmp_sedi_qg + (qgdummy - qg(:,:,:))
         cmp_sedi_qng(:,:,:) = cmp_sedi_qng + (qngdummy - qng(:,:,:)) !ZD >>
+        cmp_pf_qg(:,:,:) = rain_g(:,:,:)
       END IF
 !OCH <<
     ENDIF
@@ -2908,6 +2918,7 @@ cv_i     =  2060.0_wp
              its,ite,jts,jte,kts,kte)
       ENDDO
 
+             cmp_pf_qh(:,:,:) = rain_h(:,:,:) !ZD >>
 
     END IF
 
@@ -2942,6 +2953,7 @@ cv_i     =  2060.0_wp
       IF (lcmprates) THEN
         cmp_sedi_qs(:,:,:) = cmp_sedi_qs + (qsdummy - qs(:,:,:))
         cmp_sedi_qns(:,:,:) = cmp_sedi_qns + (qnsdummy - qns(:,:,:)) !ZD >>
+        cmp_pf_qs(:,:,:) = rain_s(:,:,:)
       END IF
 !OCH <<
     ENDIF
@@ -2976,6 +2988,7 @@ cv_i     =  2060.0_wp
       IF (lcmprates) THEN
         cmp_sedi_qi(:,:,:) = cmp_sedi_qi + (qidummy - qi(:,:,:))
         cmp_sedi_qni(:,:,:) = cmp_sedi_qni + (qnidummy - qni(:,:,:)) !ZD >>
+        cmp_pf_qi(:,:,:) = rain_i(:,:,:)
       END IF
 !OCH <<
 

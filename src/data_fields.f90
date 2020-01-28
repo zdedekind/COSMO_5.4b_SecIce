@@ -467,7 +467,11 @@ IMPLICIT NONE
     Ni_sec_dr_spl(:,:,:) , &
     Ni_sec_gr_br_ice(:,:,:) , &
     Ni_sec_gr_br_snow(:,:,:), & 
-    Ni_pri_homhet(:,:,:)
+    Ni_pri_homhet(:,:,:), &
+    cmp_pf_qi(:,:,:), &
+    cmp_pf_qs(:,:,:), &
+    cmp_pf_qg(:,:,:), &
+    cmp_pf_qh(:,:,:)
 ! ZD_20190819
 
 ! 5. fields for surface values and soil/canopy model variables        (unit )
